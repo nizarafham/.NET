@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Profil Saya";
+}
+
+<h1 class="text-3xl font-bold mb-8 text-gray-800">@ViewData["Title"]</h1>
+
+<div class="bg-white p-6 rounded-lg shadow-md">
+    <p class="text-lg text-gray-700">Selamat datang, <span class="font-semibold">@ViewBag.FullName</span> (@ViewBag.UserName)!</p>
+    <p class="mt-4 text-gray-600">Ini adalah halaman profil Anda. Fitur lebih lanjut akan ditambahkan di sini.</p>
+
+    <form asp-controller="Account" asp-action="Logout" method="post" class="mt-8">
+         @Html.AntiForgeryToken()
+        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            Logout
+        </button>
+    </form>
+</div>

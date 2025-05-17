@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Keranjang Belanja";
+}
+
+<h1 class="text-3xl font-bold mb-8 text-gray-800">@ViewData["Title"]</h1>
+
+<div class="bg-white p-6 rounded-lg shadow-md">
+    @if (!string.IsNullOrEmpty(ViewBag.CartMessage))
+    {
+        <p class="text-gray-600">@ViewBag.CartMessage</p>
+    }
+    else
+    {
+        <!-- Tampilkan item cart di sini nanti -->
+        <p>Item 1...</p>
+        <p>Item 2...</p>
+    }
+</div>

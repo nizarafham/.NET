@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Akses Ditolak";
+}
+
+<div class="text-center mt-20">
+    <h1 class="text-4xl font-bold text-red-600">@ViewData["Title"]</h1>
+    <p class="text-xl text-gray-700 mt-4">Anda tidak memiliki izin untuk mengakses halaman ini.</p>
+    <a asp-controller="Home" asp-action="Index" class="mt-8 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Kembali ke Beranda
+    </a>
+</div>

@@ -1,0 +1,186 @@
+﻿@using Ecommerce.Models
+@{
+    ViewData["Title"] = "Beranda";
+    var banners = ViewBag.Banners as List<BannerItem> ?? new List<BannerItem>();
+    var categories = ViewBag.Categories as List<Category> ?? new List<Category>();
+    var brands = ViewBag.Brands as List<Brand> ?? new List<Brand>();
+    var recommendedProducts = ViewBag.RecommendedProducts as List<Product> ?? new List<Product>();
+}
+
+<style>
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+    }
+    #banner-carousel [data-carousel-slide-to][aria-current="true"] {
+         background-color: white;
+    }
+     #banner-carousel [data-carousel-slide-to][aria-current="false"] {
+         background-color: rgba(255, 255, 255, 0.5); 
+    }
+</style>
+
+@* banner *@
+@if (banners.Any()) 
+{
+    <section id="banner-carousel" class="relative w-full overflow-hidden mb-8" data-carousel="slide">
+        <div class="relative h-56 md:h-96 overflow-hidden rounded-lg">
+            @foreach (var banner in banners)
+            {
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <a href="@banner.LinkUrl">
+                        <img src="@banner.ImageUrl" class="block w-full h-full object-cover" alt="@banner.AltText">
+                    </a>
+                </div>
+            }
+        </div>
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+            @for (int i = 0; i < banners.Count; i++)
+            {
+                <button type="button" class="w-3 h-3 rounded-full bg-white/50 dark:bg-gray-800/30 hover:bg-white dark:hover:bg-gray-800" aria-current="@(i == 0 ? "true" : "false")" aria-label="Slide @(i+1)" data-carousel-slide-to="@i"></button>
+            }
+        </div>
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-200 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-200 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </section>
+}
+
+@* kategori *@
+<section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-gray-800">Kategori Populer</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+        @foreach (var category in categories)
+        {
+            <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@category.Id" class="group">
+                <div class="flex flex-col items-center">
+                    @if(!string.IsNullOrEmpty(category.ImageUrl))
+                    {
+                        <div class="w-[100px] h-[100px] mb-2 rounded-full bg-white shadow-md overflow-hidden flex items-center justify-center group-hover:shadow-lg transition-shadow duration-300">
+                            <img src="@category.ImageUrl" alt="@category.Name" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                    }
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-blue-600 text-center">@category.Name</p>
+                </div>
+            </a>
+        }
+    </div>
+</section>
+
+@* brand *@
+<section class="mb-12">
+    <h2 class="text-2xl font-semibold mb-6 text-gray-800">Merek Terkenal</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+        @foreach (var brand in brands)
+        {
+            <a asp-controller="Product" asp-action="Index" asp-route-brandId="@brand.Id" class="block group">
+                <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-4 flex flex-col items-center justify-center h-40">
+                    @if(!string.IsNullOrEmpty(brand.LogoUrl))
+                    {
+                       <img src="@brand.LogoUrl" alt="@brand.Name" class="max-h-20 mb-3 object-contain group-hover:opacity-75 transition-opacity duration-300">
+                    }
+                    <p class="text-gray-700 font-medium group-hover:text-blue-600">@brand.Name</p>
+                </div>
+            </a>
+        }
+    </div>
+</section>
+
+@* product recomended *@
+<section>
+    <h2 class="text-2xl font-semibold mb-6 text-gray-800">Rekomendasi Untukmu</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+        @foreach (var product in recommendedProducts)
+        {
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">
+                    <img src="@product.ImageUrl" alt="@product.Name" class="w-full h-48 object-cover group-hover:opacity-80 transition-opacity duration-300">
+                </a>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-1">
+                         <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="hover:text-blue-600">@product.Name</a>
+                    </h3>
+                    <p class="text-sm text-gray-500 mb-2">@product.CategoryName - @product.BrandName</p>
+                    <p class="text-xl font-bold text-blue-600 mb-3">Rp @product.Price.ToString("N0")</p>
+                    <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                        Tambah ke Keranjang
+                    </button>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+@section Scripts {
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carouselElement = document.getElementById('banner-carousel');
+            if (carouselElement) {
+                if (typeof Flowbite !== 'undefined' && typeof Flowbite.initCarousels === 'function') {
+                     console.log("Initializing Flowbite carousel automatically.");
+                     const items = Array.from(carouselElement.querySelectorAll('[data-carousel-item]'));
+                     const indicators = Array.from(carouselElement.querySelectorAll('[data-carousel-slide-to]'));
+                     const prevButton = carouselElement.querySelector('[data-carousel-prev]');
+                     const nextButton = carouselElement.querySelector('[data-carousel-next]');
+
+                     if (items.length > 0) {
+                         let currentItem = 0;
+
+                         function showItem(index) {
+                             items.forEach((item, i) => {
+                                 item.classList.toggle('hidden', i !== index);
+                             });
+                             indicators.forEach((indicator, i) => {
+                                 indicator.setAttribute('aria-current', i === index ? 'true' : 'false');
+                             });
+                             currentItem = index;
+                         }
+
+                         showItem(0);
+
+
+                         prevButton?.addEventListener('click', () => {
+                             showItem((currentItem - 1 + items.length) % items.length);
+                         });
+
+                         nextButton?.addEventListener('click', () => {
+                             showItem((currentItem + 1) % items.length);
+                         });
+
+                         indicators.forEach((indicator, i) => {
+                             indicator.addEventListener('click', () => {
+                                 showItem(i);
+                             });
+                         });
+
+                         setInterval(() => {
+                            showItem((currentItem + 1) % items.length);
+                         }, 5000); 
+
+                     } else {
+                        console.warn("Carousel element found, but no items ([data-carousel-item]) found inside.");
+                     }
+
+
+                } else {
+                    console.warn("Flowbite JS not detected or not initialized automatically. Manual carousel script might be running or failing.");
+                }
+            } else {
+                console.warn("Carousel element (#banner-carousel) not found in the DOM.");
+            }
+        });
+    </script>
+}

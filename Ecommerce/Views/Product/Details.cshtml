@@ -1,0 +1,38 @@
+@model Ecommerce.Models.Product
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="bg-white shadow-xl rounded-lg p-6 md:p-8">
+    <div class="md:flex md:gap-8"> @* Tambahkan gap di sini untuk jarak antar kolom *@
+        <div class="md:w-1/2 flex justify-center items-start"> @* Gunakan flex untuk centering jika gambar lebih kecil dari container *@
+            @*
+                Menggunakan max-w-sm dan max-h-80 untuk membatasi ukuran maksimal gambar.
+                mx-auto untuk centering horizontal di dalam kolom md:w-1/2.
+                object-contain untuk memastikan seluruh gambar terlihat tanpa terpotong.
+            *@
+            <img src="@Model.ImageUrl" alt="@Model.Name" class="max-w-sm max-h-80 object-contain rounded-lg">
+        </div>
+        <div class="md:w-1/2 md:pl-0 mt-6 md:mt-0"> @* Hapus md:pl-8 karena gap sudah di container flex *@
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">@Model.Name</h1>
+            <p class="text-md text-gray-600 mb-4">
+                <a asp-controller="Product" asp-action="Index" asp-route-categoryId="@Model.CategoryId" class="text-blue-600 hover:underline">@Model.CategoryName</a>
+                -
+                <a asp-controller="Product" asp-action="Index" asp-route-brandId="@Model.BrandId" class="text-blue-600 hover:underline">@Model.BrandName</a>
+            </p>
+            <p class="text-3xl font-extrabold text-blue-700 mb-6">Rp @Model.Price.ToString("N0")</p>
+
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Deskripsi Produk</h2>
+                <p class="text-gray-700 leading-relaxed">
+                    @Model.Description
+                </p>
+            </div>
+
+            <button class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors duration-300">
+                <svg class="w-6 h-6 inline-block mr-2 -mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/200/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                Tambah ke Keranjang
+            </button>
+        </div>
+    </div>
+</div>
