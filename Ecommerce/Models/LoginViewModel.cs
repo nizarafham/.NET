@@ -11,6 +11,8 @@ namespace Ecommerce.Models
         [DataType(DataType.Password)]
         public string Password { get; set; } = string.Empty;
 
+        [Display(Name = "Ingat Saya")]
+        public bool RememberMe { get; set; }
         public string? ReturnUrl { get; set; }
     }
 }

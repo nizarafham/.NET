@@ -15,12 +15,12 @@
          background-color: white;
     }
      #banner-carousel [data-carousel-slide-to][aria-current="false"] {
-         background-color: rgba(255, 255, 255, 0.5); 
+         background-color: rgba(255, 255, 255, 0.5);
     }
 </style>
 
 @* banner *@
-@if (banners.Any()) 
+@if (banners.Any())
 {
     <section id="banner-carousel" class="relative w-full overflow-hidden mb-8" data-carousel="slide">
         <div class="relative h-56 md:h-96 overflow-hidden rounded-lg">
@@ -110,13 +110,16 @@
                 </a>
                 <div class="p-4">
                     <h3 class="text-lg font-semibold text-gray-800 mb-1">
-                         <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="hover:text-blue-600">@product.Name</a>
+                           <a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id" class="hover:text-blue-600">@product.Name</a>
                     </h3>
-                    <p class="text-sm text-gray-500 mb-2">@product.CategoryName - @product.BrandName</p>
+                    @* Menggunakan properti navigasi jika sudah ditambahkan di model Product *@
+                    <p class="text-sm text-gray-500 mb-2">@(product.Category?.Name ?? "N/A") - @(product.Brand?.Name ?? "N/A")</p>
                     <p class="text-xl font-bold text-blue-600 mb-3">Rp @product.Price.ToString("N0")</p>
-                    <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-colors duration-300">
+                    @* Tombol "Tambah ke Keranjang" diubah menjadi link *@
+                    <a asp-controller="Cart" asp-action="AddToCart" asp-route-productId="@product.Id"
+                       class="block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center transition-colors duration-300">
                         Tambah ke Keranjang
-                    </button>
+                    </a>
                 </div>
             </div>
         }
@@ -168,15 +171,15 @@
 
                          setInterval(() => {
                             showItem((currentItem + 1) % items.length);
-                         }, 5000); 
+                         }, 5000);
 
                      } else {
-                        console.warn("Carousel element found, but no items ([data-carousel-item]) found inside.");
+                         console.warn("Carousel element found, but no items ([data-carousel-item]) found inside.");
                      }
 
 
                 } else {
-                    console.warn("Flowbite JS not detected or not initialized automatically. Manual carousel script might be running or failing.");
+                     console.warn("Flowbite JS not detected or not initialized automatically. Manual carousel script might be running or failing.");
                 }
             } else {
                 console.warn("Carousel element (#banner-carousel) not found in the DOM.");

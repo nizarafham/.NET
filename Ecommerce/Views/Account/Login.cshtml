@@ -1,7 +1,22 @@
-@model Ecommerce.Models.LoginViewModel
 @{
     ViewData["Title"] = "Login";
+    Layout = null; // Ini yang membuat view ini tidak menggunakan layout
 }
+
+@model Ecommerce.Models.LoginViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ecommerce</title>
+    @* Sertakan link ke CSS framework yang Anda gunakan, misalnya Tailwind CSS *@
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    @* Atau link ke file CSS lokal Anda jika ada *@
+    @* <link rel="stylesheet" href="~/css/site.css" /> *@
+</head>
+<body class="bg-gray-100"> @* Tambahkan background color ke body *@
 
 <div class="max-w-md mx-auto mt-10 bg-white p-8 rounded-lg shadow-xl">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Login ke Akun Anda</h2>
@@ -22,10 +37,17 @@
                 Login
             </button>
         </div>
-        @* <div class="mt-4 text-center">
+        <div class="mt-4 text-center">
             <a asp-controller="Account" asp-action="Register" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                 Belum punya akun? Daftar di sini
             </a>
-        </div> *@
+        </div>
     </form>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+</body>
+</html>

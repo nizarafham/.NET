@@ -1,18 +1,87 @@
+@model List<Ecommerce.Models.CartItem>
 @{
     ViewData["Title"] = "Keranjang Belanja";
+    decimal total = 0;
 }
 
-<h1 class="text-3xl font-bold mb-8 text-gray-800">@ViewData["Title"]</h1>
+<h1>Keranjang Belanja Anda</h1>
 
-<div class="bg-white p-6 rounded-lg shadow-md">
-    @if (!string.IsNullOrEmpty(ViewBag.CartMessage))
-    {
-        <p class="text-gray-600">@ViewBag.CartMessage</p>
-    }
-    else
-    {
-        <!-- Tampilkan item cart di sini nanti -->
-        <p>Item 1...</p>
-        <p>Item 2...</p>
-    }
-</div>
+@if (Model == null || !Model.Any())
+{
+    <div class="alert alert-info">
+        Keranjang belanja Anda kosong.
+    </div>
+    <p><a asp-controller="Home" asp-action="Index">Kembali ke Beranda</a></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produk</th>
+                <th>Harga Satuan</th>
+                <th>Jumlah</th>
+                <th>Subtotal</th>
+                <th></th> @* Untuk tombol aksi *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var subtotal = item.Product.Price * item.Quantity;
+                total += subtotal;
+                <tr>
+                    <td>
+                        <div class="flex items-center">
+                            @if (!string.IsNullOrEmpty(item.Product.ImageUrl))
+                            {
+                                <img src="@item.Product.ImageUrl" alt="@item.Product.Name" style="width: 50px; height: auto; margin-right: 10px;" />
+                            }
+                            <a asp-controller="Product" asp-action="Details" asp-route-id="@item.ProductId">
+                                @item.Product.Name
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        Rp @item.Product.Price.ToString("N0")
+                    </td>
+                    <td>
+                        @* Form untuk update quantity *@
+                        <form asp-controller="Cart" asp-action="UpdateQuantity" method="post" class="form-inline">
+                             <input type="hidden" name="cartItemId" value="@item.Id" />
+                             <input type="number" name="quantity" value="@item.Quantity" min="1" class="form-control form-control-sm d-inline-block" style="width: 70px;" />
+                             <button type="submit" class="btn btn-sm btn-outline-primary ml-2">Update</button>
+                        </form>
+                    </td>
+                    <td>
+                        Rp @subtotal.ToString("N0")
+                    </td>
+                    <td>
+                        @* Form untuk menghapus item *@
+                         <form asp-controller="Cart" asp-action="RemoveItem" method="post" class="form-inline">
+                             <input type="hidden" name="cartItemId" value="@item.Id" />
+                             <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                         </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right"><strong>Total:</strong></td>
+                <td><strong>Rp @total.ToString("N0")</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right mt-4">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Lanjutkan Belanja</a>
+        @* Tombol Checkout - Anda perlu membuat action dan view untuk checkout *@
+        @* <a asp-controller="Checkout" asp-action="Index" class="btn btn-success">Checkout</a> *@
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

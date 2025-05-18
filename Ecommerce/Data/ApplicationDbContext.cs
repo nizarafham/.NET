@@ -17,6 +17,8 @@ namespace Ecommerce.Data // Sesuaikan dengan namespace DbContext Anda
         public DbSet<Product> Products { get; set; }
         public DbSet<BannerItem> BannerItems { get; set; }
 
+        public DbSet<User> Users { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -40,9 +42,9 @@ namespace Ecommerce.Data // Sesuaikan dengan namespace DbContext Anda
                 new Brand { Id = 5, Name = "Xiaomi", LogoUrl = "/images/xiaomi_logo.png" }
             );
 
-             // Seed Products
-             // Pastikan Id di sini tidak berkonflik jika ada data lain
-             // Juga perhatikan relasi dengan CategoryId dan BrandId
+            // Seed Products
+            // Pastikan Id di sini tidak berkonflik jika ada data lain
+            // Juga perhatikan relasi dengan CategoryId dan BrandId
             modelBuilder.Entity<Product>().HasData(
                 new Product { Id = 1, Name = "Laptop ROG Strix", Description = "Laptop gaming terbaik", Price = 25000000, CategoryId = 1, BrandId = 1, ImageUrl = "/images/rog_strix.jpg" /*, CategoryName = "Laptop", BrandName = "Asus"*/ }, // CategoryName dan BrandName tidak perlu di sini jika ada relasi navigasi
                 new Product { Id = 2, Name = "iPhone 15 Pro", Description = "Handphone canggih", Price = 20000000, CategoryId = 2, BrandId = 4, ImageUrl = "/images/iphone_15_pro.png" /*, CategoryName = "Handphone", BrandName = "Apple"*/ },
@@ -60,9 +62,6 @@ namespace Ecommerce.Data // Sesuaikan dengan namespace DbContext Anda
                  new BannerItem { Id = 2, ImageUrl = "/images/banner2.jpg", AltText = "Produk Terbaru", LinkUrl = "/Product?categoryId=1" },
                  new BannerItem { Id = 3, ImageUrl = "/images/banner3.jpg", AltText = "Gratis Ongkir", LinkUrl = "#" }
             );
-
-             // Konfigurasi lain jika ada (misalnya relasi) bisa ditambahkan di sini
-             // Contoh: modelBuilder.Entity<Product>().HasOne(p => p.Category).WithMany().HasForeignKey(p => p.CategoryId);
 
         }
     }
