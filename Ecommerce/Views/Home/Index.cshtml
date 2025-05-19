@@ -115,11 +115,18 @@
                     @* Menggunakan properti navigasi jika sudah ditambahkan di model Product *@
                     <p class="text-sm text-gray-500 mb-2">@(product.Category?.Name ?? "N/A") - @(product.Brand?.Name ?? "N/A")</p>
                     <p class="text-xl font-bold text-blue-600 mb-3">Rp @product.Price.ToString("N0")</p>
-                    @* Tombol "Tambah ke Keranjang" diubah menjadi link *@
-                    <a asp-controller="Cart" asp-action="AddToCart" asp-route-productId="@product.Id"
-                       class="block w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center transition-colors duration-300">
-                        Tambah ke Keranjang
-                    </a>
+
+                    @* Tombol "Tambah ke Keranjang" diubah menjadi form POST *@
+                    <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                        @Html.AntiForgeryToken() @* Penting untuk keamanan *@
+                        <input type="hidden" name="productId" value="@product.Id" />
+                        @* Opsional: Tambahkan input quantity jika user bisa memilih jumlah dari sini *@
+                        @* <input type="hidden" name="quantity" value="1" /> *@
+
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-center transition-colors duration-300">
+                            Tambah ke Keranjang
+                        </button>
+                    </form>
                 </div>
             </div>
         }

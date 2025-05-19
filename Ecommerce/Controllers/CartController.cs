@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 using System.Security.Claims; // Diperlukan untuk mendapatkan user ID
 using Ecommerce.Data;
-using Ecommerce.Models;
+using Ecommerce.Models; // Pastikan namespace model Anda benar
 using Microsoft.EntityFrameworkCore; // Untuk operasi database seperti FindAsync, FirstOrDefaultAsync, AddAsync, SaveChangesAsync
+using System.Linq; // Untuk AnyAsync, FirstOrDefaultAsync, Where
+using Microsoft.AspNetCore.Authentication.Cookies; // Diperlukan untuk CookieAuthenticationDefaults.AuthenticationScheme
 
 namespace Ecommerce.Controllers
 {
@@ -33,12 +35,13 @@ namespace Ecommerce.Controllers
             {
                 // Ini seharusnya tidak terjadi jika [Authorize] bekerja,
                 // tapi ini adalah fallback yang aman.
+                _logger?.LogError("User ID not found or invalid in claims for Cart Index.");
                 return RedirectToAction("Login", "Account");
             }
 
             // Mengambil item keranjang user dari database, termasuk data Produk terkait
             var cartItems = await _context.CartItems
-                                        .Where(ci => ci.UserId == userId)
+                                        .Where(ci => ci.UserId == userId) // <-- Menggunakan UserId
                                         .Include(ci => ci.Product) // Memuat data Produk terkait
                                         .ToListAsync();
 
@@ -58,12 +61,13 @@ namespace Ecommerce.Controllers
                 // Jika user belum login, redirect ke halaman login
                 // Middleware [Authorize] akan menangani sebagian besar kasus ini,
                 // tapi ini adalah validasi tambahan.
+                 _logger?.LogWarning("Attempted to add to cart without valid user ID.");
                  return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("AddToCart", "Cart", new { productId = productId, quantity = quantity }) });
             }
 
             // Cari item keranjang yang sudah ada untuk user dan produk ini
             var existingCartItem = await _context.CartItems
-                                                .FirstOrDefaultAsync(ci => ci.UserId == userId && ci.ProductId == productId);
+                                                .FirstOrDefaultAsync(ci => ci.UserId == userId && ci.ProductId == productId); // <-- Menggunakan UserId
 
             if (existingCartItem == null)
             {
@@ -72,13 +76,14 @@ namespace Ecommerce.Controllers
                 if (productToAdd == null)
                 {
                     // Produk tidak ditemukan
+                     _logger?.LogWarning("Product with ID {ProductId} not found when adding to cart.", productId);
                     return NotFound(); // Atau redirect ke halaman error/pesan
                 }
 
                 var newCartItem = new CartItem
                 {
                     ProductId = productId,
-                    UserId = userId,
+                    UserId = userId, // <-- Menggunakan UserId
                     Quantity = quantity > 0 ? quantity : 1 // Pastikan quantity minimal 1
                 };
 
@@ -110,13 +115,15 @@ namespace Ecommerce.Controllers
              var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userIdString == null || !int.TryParse(userIdString, out int userId))
             {
+                 _logger?.LogError("User ID not found or invalid in claims for UpdateQuantity.");
                  return Unauthorized(); // Atau RedirectToAction("Login", "Account");
             }
 
-            var cartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.Id == cartItemId && ci.UserId == userId);
+            var cartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.Id == cartItemId && ci.UserId == userId); // <-- Menggunakan UserId
 
             if (cartItem == null)
             {
+                 _logger?.LogWarning("Cart item {CartItemId} not found or does not belong to user {UserId} for UpdateQuantity.", cartItemId, userId);
                 return NotFound(); // Item keranjang tidak ditemukan atau bukan milik user ini
             }
 
@@ -147,13 +154,15 @@ namespace Ecommerce.Controllers
             var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (userIdString == null || !int.TryParse(userIdString, out int userId))
             {
+                 _logger?.LogError("User ID not found or invalid in claims for RemoveItem.");
                  return Unauthorized(); // Atau RedirectToAction("Login", "Account");
             }
 
-            var cartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.Id == cartItemId && ci.UserId == userId);
+            var cartItem = await _context.CartItems.FirstOrDefaultAsync(ci => ci.Id == cartItemId && ci.UserId == userId); // <-- Menggunakan UserId
 
             if (cartItem == null)
             {
+                 _logger?.LogWarning("Cart item {CartItemId} not found or does not belong to user {UserId} for RemoveItem.", cartItemId, userId);
                 return NotFound(); // Item keranjang tidak ditemukan atau bukan milik user ini
             }
 
