@@ -17,6 +17,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\apple.png",
+      "PackagePath": "staticwebassets\\images\\apple.png"
+    },
+    {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.png",
+      "PackagePath": "staticwebassets\\images\\asus.png"
+    },
+    {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.webp",
+      "PackagePath": "staticwebassets\\images\\asus.webp"
+    },
+    {
       "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\banner1.jpg",
       "PackagePath": "staticwebassets\\images\\banner1.jpg"
     },
@@ -49,6 +61,10 @@
       "PackagePath": "staticwebassets\\images\\headset.jpg"
     },
     {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\iphone_15_pro.jpg",
+      "PackagePath": "staticwebassets\\images\\iphone_15_pro.jpg"
+    },
+    {
       "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\keyboard.htm",
       "PackagePath": "staticwebassets\\images\\keyboard.htm"
     },
@@ -57,12 +73,36 @@
       "PackagePath": "staticwebassets\\images\\keyboard.jpg"
     },
     {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\keyboard_k2.jpg",
+      "PackagePath": "staticwebassets\\images\\keyboard_k2.jpg"
+    },
+    {
       "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\laptop.png",
       "PackagePath": "staticwebassets\\images\\laptop.png"
     },
     {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitech.png",
+      "PackagePath": "staticwebassets\\images\\logitech.png"
+    },
+    {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitexh_g_pro_x.jpg",
+      "PackagePath": "staticwebassets\\images\\logitexh_g_pro_x.jpg"
+    },
+    {
       "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\mouse.jpg",
       "PackagePath": "staticwebassets\\images\\mouse.jpg"
+    },
+    {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\rog_strix.jpg",
+      "PackagePath": "staticwebassets\\images\\rog_strix.jpg"
+    },
+    {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\samsung.png",
+      "PackagePath": "staticwebassets\\images\\samsung.png"
+    },
+    {
+      "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\xiaomi.png",
+      "PackagePath": "staticwebassets\\images\\xiaomi.png"
     },
     {
       "Id": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\js\\site.js",

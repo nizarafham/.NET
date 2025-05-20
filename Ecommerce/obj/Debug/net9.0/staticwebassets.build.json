@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9p68suktCq3G67uGL1Nf7T2FHIXua7GnlVTQPUgq6bs=",
+  "Hash": "itCn9yZzUp+kcvsK/mjsdL5g3OuF+sLP2qPxEkG4ox4=",
   "Source": "Ecommerce",
   "BasePath": "_content/Ecommerce",
   "Mode": "Default",
@@ -1550,6 +1550,69 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\apple.png",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/apple#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o029wm98j4",
+      "Integrity": "iMXekoNnP8bjkz1/gQ5c/lrKM3UjxckXHsXCVC3xlX8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\apple.png"
+    },
+    {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.png",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/asus#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1nywfkazw2",
+      "Integrity": "XRYe9OFnnXQ9rXJRrVDzHVLKn2Rdgg5OgPJoyBDwZ64=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\asus.png"
+    },
+    {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.webp",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/asus#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "99wb1ixoir",
+      "Integrity": "80557czcwSGmMwk68wHSeSjn6ek88WKyQmayGz+hFp4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\asus.webp"
+    },
+    {
       "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\banner1.jpg",
       "SourceId": "Ecommerce",
       "SourceType": "Discovered",
@@ -1718,6 +1781,48 @@
       "OriginalItemSpec": "wwwroot\\images\\headset.jpg"
     },
     {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\iphone_15_pro.jpg",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/iphone_15_pro#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1c9zlhefjd",
+      "Integrity": "AdNHraU6vK9F4ObyxYOfgacJuzipG9tWlNze8jmAvo4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\iphone_15_pro.jpg"
+    },
+    {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\keyboard_k2.jpg",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/keyboard_k2#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gvxoabza7y",
+      "Integrity": "fMdD4SCvAqMigtyFia7exfWg8xL6ZRt3ys6nygbwKdA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\keyboard_k2.jpg"
+    },
+    {
       "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\keyboard.htm",
       "SourceId": "Ecommerce",
       "SourceType": "Discovered",
@@ -1781,6 +1886,48 @@
       "OriginalItemSpec": "wwwroot\\images\\laptop.png"
     },
     {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitech.png",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/logitech#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sq1d5932xd",
+      "Integrity": "7BwYQCtwu/yJDsSYkkm9S2t52PDKSaNE5ZNSZnHyoPc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logitech.png"
+    },
+    {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitexh_g_pro_x.jpg",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/logitexh_g_pro_x#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "045wj9mc4o",
+      "Integrity": "4Pg3dXbYBR9vsusrVtko7bBPwYFQRVT3grdyYrMeVb8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logitexh_g_pro_x.jpg"
+    },
+    {
       "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\mouse.jpg",
       "SourceId": "Ecommerce",
       "SourceType": "Discovered",
@@ -1800,6 +1947,69 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\mouse.jpg"
+    },
+    {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\rog_strix.jpg",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/rog_strix#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mn34bqerw5",
+      "Integrity": "fuGWUXEqhLXYo84FqeWdYLOKbOJPRkK106qsh+QvAyU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\rog_strix.jpg"
+    },
+    {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\samsung.png",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/samsung#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z7ctcy075r",
+      "Integrity": "4QhJExTL1M3/Qg4MKTahT+WQP9d8ivjqsUzWBP/n9J4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\samsung.png"
+    },
+    {
+      "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\xiaomi.png",
+      "SourceId": "Ecommerce",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\",
+      "BasePath": "_content/Ecommerce",
+      "RelativePath": "images/xiaomi#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "1ix20e0cur",
+      "Integrity": "5/HDoqhsW7yhz2EBk9UCSMZ2QfvpdCeTvzC3iGY30jg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\xiaomi.png"
     },
     {
       "Identity": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\js\\site.js",
@@ -4575,6 +4785,252 @@
       ]
     },
     {
+      "Route": "images/apple.o029wm98j4.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\apple.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1541"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iMXekoNnP8bjkz1/gQ5c/lrKM3UjxckXHsXCVC3xlX8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:38:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o029wm98j4"
+        },
+        {
+          "Name": "label",
+          "Value": "images/apple.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iMXekoNnP8bjkz1/gQ5c/lrKM3UjxckXHsXCVC3xlX8="
+        }
+      ]
+    },
+    {
+      "Route": "images/apple.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\apple.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1541"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iMXekoNnP8bjkz1/gQ5c/lrKM3UjxckXHsXCVC3xlX8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:38:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-iMXekoNnP8bjkz1/gQ5c/lrKM3UjxckXHsXCVC3xlX8="
+        }
+      ]
+    },
+    {
+      "Route": "images/asus.1nywfkazw2.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3841"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XRYe9OFnnXQ9rXJRrVDzHVLKn2Rdgg5OgPJoyBDwZ64=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:37:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1nywfkazw2"
+        },
+        {
+          "Name": "label",
+          "Value": "images/asus.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XRYe9OFnnXQ9rXJRrVDzHVLKn2Rdgg5OgPJoyBDwZ64="
+        }
+      ]
+    },
+    {
+      "Route": "images/asus.99wb1ixoir.webp",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2826"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"80557czcwSGmMwk68wHSeSjn6ek88WKyQmayGz+hFp4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:40:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "99wb1ixoir"
+        },
+        {
+          "Name": "label",
+          "Value": "images/asus.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-80557czcwSGmMwk68wHSeSjn6ek88WKyQmayGz+hFp4="
+        }
+      ]
+    },
+    {
+      "Route": "images/asus.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3841"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XRYe9OFnnXQ9rXJRrVDzHVLKn2Rdgg5OgPJoyBDwZ64=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:37:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XRYe9OFnnXQ9rXJRrVDzHVLKn2Rdgg5OgPJoyBDwZ64="
+        }
+      ]
+    },
+    {
+      "Route": "images/asus.webp",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\asus.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2826"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"80557czcwSGmMwk68wHSeSjn6ek88WKyQmayGz+hFp4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:40:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-80557czcwSGmMwk68wHSeSjn6ek88WKyQmayGz+hFp4="
+        }
+      ]
+    },
+    {
       "Route": "images/banner1.jpg",
       "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\banner1.jpg",
       "Selectors": [],
@@ -5663,6 +6119,170 @@
       ]
     },
     {
+      "Route": "images/iphone_15_pro.1c9zlhefjd.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\iphone_15_pro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90278"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AdNHraU6vK9F4ObyxYOfgacJuzipG9tWlNze8jmAvo4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:12:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1c9zlhefjd"
+        },
+        {
+          "Name": "label",
+          "Value": "images/iphone_15_pro.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AdNHraU6vK9F4ObyxYOfgacJuzipG9tWlNze8jmAvo4="
+        }
+      ]
+    },
+    {
+      "Route": "images/iphone_15_pro.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\iphone_15_pro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90278"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AdNHraU6vK9F4ObyxYOfgacJuzipG9tWlNze8jmAvo4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:12:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AdNHraU6vK9F4ObyxYOfgacJuzipG9tWlNze8jmAvo4="
+        }
+      ]
+    },
+    {
+      "Route": "images/keyboard_k2.gvxoabza7y.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\keyboard_k2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28027"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fMdD4SCvAqMigtyFia7exfWg8xL6ZRt3ys6nygbwKdA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:13:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gvxoabza7y"
+        },
+        {
+          "Name": "label",
+          "Value": "images/keyboard_k2.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fMdD4SCvAqMigtyFia7exfWg8xL6ZRt3ys6nygbwKdA="
+        }
+      ]
+    },
+    {
+      "Route": "images/keyboard_k2.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\keyboard_k2.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28027"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fMdD4SCvAqMigtyFia7exfWg8xL6ZRt3ys6nygbwKdA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:13:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fMdD4SCvAqMigtyFia7exfWg8xL6ZRt3ys6nygbwKdA="
+        }
+      ]
+    },
+    {
       "Route": "images/keyboard.cr4rpa9m7u.htm",
       "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\obj\\Debug\\net9.0\\compressed\\ssjtb95ygz-cr4rpa9m7u.gz",
       "Selectors": [
@@ -6125,6 +6745,170 @@
       ]
     },
     {
+      "Route": "images/logitech.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitech.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7BwYQCtwu/yJDsSYkkm9S2t52PDKSaNE5ZNSZnHyoPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:38:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7BwYQCtwu/yJDsSYkkm9S2t52PDKSaNE5ZNSZnHyoPc="
+        }
+      ]
+    },
+    {
+      "Route": "images/logitech.sq1d5932xd.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitech.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2103"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7BwYQCtwu/yJDsSYkkm9S2t52PDKSaNE5ZNSZnHyoPc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:38:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sq1d5932xd"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logitech.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7BwYQCtwu/yJDsSYkkm9S2t52PDKSaNE5ZNSZnHyoPc="
+        }
+      ]
+    },
+    {
+      "Route": "images/logitexh_g_pro_x.045wj9mc4o.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitexh_g_pro_x.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Pg3dXbYBR9vsusrVtko7bBPwYFQRVT3grdyYrMeVb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:13:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "045wj9mc4o"
+        },
+        {
+          "Name": "label",
+          "Value": "images/logitexh_g_pro_x.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Pg3dXbYBR9vsusrVtko7bBPwYFQRVT3grdyYrMeVb8="
+        }
+      ]
+    },
+    {
+      "Route": "images/logitexh_g_pro_x.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\logitexh_g_pro_x.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "24726"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4Pg3dXbYBR9vsusrVtko7bBPwYFQRVT3grdyYrMeVb8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:13:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4Pg3dXbYBR9vsusrVtko7bBPwYFQRVT3grdyYrMeVb8="
+        }
+      ]
+    },
+    {
       "Route": "images/mouse.jpg",
       "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\mouse.jpg",
       "Selectors": [],
@@ -6203,6 +6987,252 @@
         {
           "Name": "integrity",
           "Value": "sha256-jg4oS7empJ9DYA7RKHdvtA/Lyf35y8eRa8sb5mJt3n4="
+        }
+      ]
+    },
+    {
+      "Route": "images/rog_strix.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\rog_strix.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28462"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fuGWUXEqhLXYo84FqeWdYLOKbOJPRkK106qsh+QvAyU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:12:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fuGWUXEqhLXYo84FqeWdYLOKbOJPRkK106qsh+QvAyU="
+        }
+      ]
+    },
+    {
+      "Route": "images/rog_strix.mn34bqerw5.jpg",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\rog_strix.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28462"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fuGWUXEqhLXYo84FqeWdYLOKbOJPRkK106qsh+QvAyU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 19 May 2025 16:12:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mn34bqerw5"
+        },
+        {
+          "Name": "label",
+          "Value": "images/rog_strix.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fuGWUXEqhLXYo84FqeWdYLOKbOJPRkK106qsh+QvAyU="
+        }
+      ]
+    },
+    {
+      "Route": "images/samsung.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\samsung.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4595"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4QhJExTL1M3/Qg4MKTahT+WQP9d8ivjqsUzWBP/n9J4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:37:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4QhJExTL1M3/Qg4MKTahT+WQP9d8ivjqsUzWBP/n9J4="
+        }
+      ]
+    },
+    {
+      "Route": "images/samsung.z7ctcy075r.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\samsung.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4595"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4QhJExTL1M3/Qg4MKTahT+WQP9d8ivjqsUzWBP/n9J4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:37:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z7ctcy075r"
+        },
+        {
+          "Name": "label",
+          "Value": "images/samsung.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4QhJExTL1M3/Qg4MKTahT+WQP9d8ivjqsUzWBP/n9J4="
+        }
+      ]
+    },
+    {
+      "Route": "images/xiaomi.1ix20e0cur.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\xiaomi.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23583"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5/HDoqhsW7yhz2EBk9UCSMZ2QfvpdCeTvzC3iGY30jg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:38:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1ix20e0cur"
+        },
+        {
+          "Name": "label",
+          "Value": "images/xiaomi.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5/HDoqhsW7yhz2EBk9UCSMZ2QfvpdCeTvzC3iGY30jg="
+        }
+      ]
+    },
+    {
+      "Route": "images/xiaomi.png",
+      "AssetFile": "C:\\Development\\Web\\dotnet\\Ecommerce\\wwwroot\\images\\xiaomi.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "23583"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5/HDoqhsW7yhz2EBk9UCSMZ2QfvpdCeTvzC3iGY30jg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 20 May 2025 03:38:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5/HDoqhsW7yhz2EBk9UCSMZ2QfvpdCeTvzC3iGY30jg="
         }
       ]
     },
