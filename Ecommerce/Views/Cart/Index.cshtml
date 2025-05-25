@@ -12,6 +12,29 @@
         <div class="col-md-12">
             <h1 class="mb-4"><i class="fas fa-shopping-cart text-primary"></i> Keranjang Belanja Anda</h1>
 
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["SuccessMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <!-- Trigger Success Modal -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                        successModal.show();
+                    });
+                </script>
+            }
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
             @if (Model == null || !Model.Any())
             {
                 <div class="card text-center py-5">
@@ -70,7 +93,11 @@
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td class="text-center align-middle"><span class="fw-semibold item-price">@item.Product.Price</span></td>
+                                                <td class="text-center align-middle">
+                                                    <span class="fw-semibold item-price" data-price="@item.Product.Price">
+                                                        Rp @item.Product.Price.ToString("N0")
+                                                    </span>
+                                                </td>
                                                 <td class="text-center align-middle">
                                                     <form asp-controller="Cart" asp-action="UpdateQuantity" method="post" class="update-quantity-form d-inline-block">
                                                         @Html.AntiForgeryToken()
@@ -82,7 +109,11 @@
                                                         </div>
                                                     </form>
                                                 </td>
-                                                <td class="text-center align-middle"><span class="fw-bold text-primary item-subtotal">Rp @(item.Product.Price * item.Quantity)</span></td>
+                                                <td class="text-center align-middle">
+                                                    <span class="fw-bold text-primary item-subtotal">
+                                                        Rp @(item.Product.Price * item.Quantity).ToString("N0")
+                                                    </span>
+                                                </td>
                                                 <td class="text-center align-middle">
                                                     <form asp-controller="Cart" asp-action="RemoveItem" method="post">
                                                         @Html.AntiForgeryToken()
@@ -126,7 +157,7 @@
                                         <strong class="text-primary fs-5">Rp <span id="displayedTotal">@initialTotal.ToString("N0")</span></strong>
                                     </div>
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-success btn-lg" id="checkoutButton">
+                                        <button type="button" class="btn btn-success btn-lg" id="checkoutButton" data-bs-toggle="modal" data-bs-target="#checkoutModal">
                                             <i class="fas fa-credit-card me-2"></i> Checkout Item Dipilih
                                         </button>
                                     </div>
@@ -143,6 +174,89 @@
     </div>
 </div>
 
+<!-- Checkout Confirmation Modal -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="checkoutModalLabel">
+                    <i class="fas fa-credit-card me-2"></i>Konfirmasi Checkout
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-3">
+                    <i class="fas fa-shopping-cart fa-3x text-primary mb-3"></i>
+                    <h6>Anda akan melakukan checkout untuk:</h6>
+                </div>
+                
+                <div id="checkoutItemsList" class="mb-3">
+                    <!-- Items will be populated by JavaScript -->
+                </div>
+                
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Total yang akan dibayar: Rp <span id="modalTotal">0</span></strong>
+                </div>
+                
+                <div class="text-muted small">
+                    <i class="fas fa-exclamation-triangle me-1"></i>
+                    Item yang sudah di-checkout akan dihapus dari keranjang belanja.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <i class="fas fa-times me-2"></i>Batal
+                </button>
+                <button type="button" class="btn btn-success" id="confirmCheckoutBtn">
+                    <i class="fas fa-check me-2"></i>Ya, Lanjutkan Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="successModalLabel">
+                    <i class="fas fa-check-circle me-2"></i>Checkout Berhasil!
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="mb-4">
+                    <i class="fas fa-check-circle fa-4x text-success mb-3"></i>
+                    <h4 class="text-success">Terima Kasih!</h4>
+                    <p class="mb-0">Checkout Anda telah berhasil diproses.</p>
+                </div>
+                
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["SuccessMessage"]
+                    </div>
+                }
+                
+                <p class="text-muted small">
+                    <i class="fas fa-info-circle me-1"></i>
+                    Item yang telah di-checkout sudah dihapus dari keranjang belanja Anda.
+                </p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="fas fa-thumbs-up me-2"></i>OK
+                </button>
+                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">
+                    <i class="fas fa-shopping-bag me-2"></i>Lanjutkan Belanja
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
@@ -153,6 +267,9 @@
             const selectedTotal = document.getElementById('selectedTotal');
             const displayedTotal = document.getElementById('displayedTotal');
             const selectedCount = document.getElementById('selectedItemCount');
+            const checkoutButton = document.getElementById('checkoutButton');
+            const confirmCheckoutBtn = document.getElementById('confirmCheckoutBtn');
+            const checkoutForm = document.getElementById('checkoutForm');
 
             function updateSummary() {
                 let total = 0;
@@ -160,51 +277,175 @@
                 let selectedIds = [];
 
                 checkboxes.forEach(cb => {
+                    const row = cb.closest('tr');
+                    const priceElement = row.querySelector('.item-price');
+                    
+                    // Ambil harga asli dari data attribute
+                    const price = parseFloat(priceElement.getAttribute('data-price')) || 0;
+                    
+                    const qtyInput = row.querySelector('.quantity-input');
+                    const qty = parseInt(qtyInput.value) || 1;
+                    const subtotalEl = row.querySelector('.item-subtotal');
+
+                    // Hitung subtotal
+                    const subtotal = price * qty;
+                    
+                    // Update subtotal display
+                    subtotalEl.textContent = 'Rp ' + subtotal.toLocaleString('id-ID');
+
+                    // Jika item dipilih, tambahkan ke total
                     if (cb.checked) {
                         count++;
-                        const row = cb.closest('tr');
-                        const price = parseFloat(row.querySelector('.item-price').textContent);
-                        const qty = parseInt(row.querySelector('.quantity-input').value);
-                        total += price * qty;
+                        total += subtotal;
                         selectedIds.push(cb.value);
                     }
                 });
 
+                // Update summary
                 selectedTotal.textContent = total.toLocaleString('id-ID');
                 displayedTotal.textContent = total.toLocaleString('id-ID');
                 selectedCount.textContent = count;
                 selectedIdsInput.value = selectedIds.join(',');
+
+                // Enable/disable checkout button
+                checkoutButton.disabled = count === 0;
             }
 
+            function populateCheckoutModal() {
+                const checkedItems = document.querySelectorAll('.item-checkbox:checked');
+                const itemsList = document.getElementById('checkoutItemsList');
+                const modalTotal = document.getElementById('modalTotal');
+                
+                let total = 0;
+                let itemsHtml = '<ul class="list-group list-group-flush">';
+                
+                checkedItems.forEach(cb => {
+                    const row = cb.closest('tr');
+                    const productName = row.querySelector('h6 a').textContent;
+                    const price = parseFloat(row.querySelector('.item-price').getAttribute('data-price'));
+                    const qty = parseInt(row.querySelector('.quantity-input').value);
+                    const subtotal = price * qty;
+                    total += subtotal;
+                    
+                    itemsHtml += `
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>${productName}</strong>
+                                <br><small class="text-muted">${qty} x Rp ${price.toLocaleString('id-ID')}</small>
+                            </div>
+                            <span class="fw-bold">Rp ${subtotal.toLocaleString('id-ID')}</span>
+                        </li>
+                    `;
+                });
+                
+                itemsHtml += '</ul>';
+                itemsList.innerHTML = itemsHtml;
+                modalTotal.textContent = total.toLocaleString('id-ID');
+            }
+
+            // Event Listeners untuk checkbox
             checkboxes.forEach(cb => cb.addEventListener('change', updateSummary));
+            
+            // Select All functionality
             selectAll.addEventListener('change', () => {
                 checkboxes.forEach(cb => cb.checked = selectAll.checked);
                 updateSummary();
             });
 
-            document.querySelectorAll('.quantity-input').forEach(input => {
-                input.addEventListener('change', updateSummary);
+            // Update ketika checkbox individual berubah untuk mengupdate select all
+            checkboxes.forEach(cb => {
+                cb.addEventListener('change', () => {
+                    const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+                    const noneChecked = Array.from(checkboxes).every(checkbox => !checkbox.checked);
+                    
+                    if (allChecked) {
+                        selectAll.checked = true;
+                        selectAll.indeterminate = false;
+                    } else if (noneChecked) {
+                        selectAll.checked = false;
+                        selectAll.indeterminate = false;
+                    } else {
+                        selectAll.checked = false;
+                        selectAll.indeterminate = true;
+                    }
+                });
             });
 
+            // Quantity input change
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('change', function() {
+                    let qty = parseInt(this.value);
+                    if (qty < 1 || isNaN(qty)) {
+                        this.value = 1;
+                    } else if (qty > 99) {
+                        this.value = 99;
+                    }
+                    updateSummary();
+                });
+
+                input.addEventListener('input', function() {
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                });
+            });
+
+            // Decrease quantity button
             document.querySelectorAll('.decrease-qty').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const input = btn.parentElement.querySelector('.quantity-input');
-                    if (parseInt(input.value) > 1) {
-                        input.value = parseInt(input.value) - 1;
+                    const currentQty = parseInt(input.value) || 1;
+                    if (currentQty > 1) {
+                        input.value = currentQty - 1;
                         updateSummary();
                     }
                 });
             });
 
+            // Increase quantity button
             document.querySelectorAll('.increase-qty').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const input = btn.parentElement.querySelector('.quantity-input');
-                    input.value = parseInt(input.value) + 1;
-                    updateSummary();
+                    const currentQty = parseInt(input.value) || 1;
+                    if (currentQty < 99) {
+                        input.value = currentQty + 1;
+                        updateSummary();
+                    }
                 });
             });
 
-            updateSummary(); // inisialisasi saat pertama kali load
+            // Checkout button click - show modal
+            checkoutButton.addEventListener('click', function(e) {
+                const selectedItems = document.querySelectorAll('.item-checkbox:checked');
+                if (selectedItems.length === 0) {
+                    e.preventDefault();
+                    alert('Pilih minimal satu item untuk checkout!');
+                    return false;
+                }
+                
+                populateCheckoutModal();
+            });
+
+            // Confirm checkout button in modal
+            confirmCheckoutBtn.addEventListener('click', function() {
+                // Hide modal first
+                const modal = bootstrap.Modal.getInstance(document.getElementById('checkoutModal'));
+                modal.hide();
+                
+                // Show loading state
+                this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing...';
+                this.disabled = true;
+                
+                // Submit form after a short delay
+                setTimeout(() => {
+                    checkoutForm.submit();
+                }, 500);
+            });
+
+            // Initial call untuk setup summary saat halaman load
+            updateSummary();
+            
+            // Set initial state untuk select all checkbox
+            const allInitiallyChecked = Array.from(checkboxes).every(cb => cb.checked);
+            selectAll.checked = allInitiallyChecked;
         });
     </script>
 }
